@@ -15,7 +15,7 @@ class classBatte
 
     constructor()
     {
-        this.name = "batte";
+        this.name = "batte"
 
         this.isMoving = false;
 
@@ -25,7 +25,7 @@ class classBatte
         this.x1 = this.x;
         this.x2 = this.x1 + this.w;
         this.ox = this.x1;
-
+        
     }
 
     createElement()
@@ -40,11 +40,26 @@ class classBatte
 
     startListenMouse()
     {
-        document.body.onmousemove = function (e){jeu.arene.batte.move(e); }; 
+        if (jeu.demoMode == false )
+        {
+            document.body.onmousemove = function (e){jeu.arene.batte.move(e); }; 
+        }
+        if (jeu.demoMode == true)
+        {
+            console.log("mouse");
+            this.x1 = 200;
+            this.run = setInterval("jeu.demoStart()",50);
+        }
+      
     }
 
     move(e)
     {
+        /*if (demoMode == true )
+        {
+            this.x1 +40 == jeu.arene.balles[0].x;
+        }*/
+
         console.log("x: "+e.clientX + " / "+ e.clientY);
         let bcr = parseInt(document.getElementById("arene").getBoundingClientRect().left);
         this.x1 = e.clientX - bcr - 40;

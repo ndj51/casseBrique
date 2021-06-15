@@ -1,5 +1,5 @@
 // =========================================
-// == BALLE git2===================================
+// == BALLE ===================================
 //===========================================
 
 
@@ -58,10 +58,9 @@ class classBalle
 
         
 
-        //=================================================
+        
         //== Collision Batte ===============================
-        //=================================================
-
+        
         if(this.y > 450 && ( this.x > jeu.arene.batte.x1 && this.x < jeu.arene.batte.x2))
         {
             this.ys = this.ys * -1;
@@ -75,6 +74,8 @@ class classBalle
     {
         console.log("moveTo");
         console.log(this.x, this.y);
+        this.x = x;
+        this.y = y;
         document.getElementById("balle0").style.left = (this.x -7) + "px";
         document.getElementById("balle0").style.top = (this.y -7) + "px";
         /*document.getElementById("balle"+this.id).style.left = (this.x - 7) + "px";
@@ -98,7 +99,7 @@ class classBalle
     go()
     {
         console.log("go();");
-        setInterval("jeu.arene.balles["+this.id+"].move();",100);    
+        setInterval("jeu.arene.balles["+this.id+"].move();",20);    
     }
     
     stop()

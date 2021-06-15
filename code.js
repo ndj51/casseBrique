@@ -2,10 +2,7 @@
 // == COMMUN ===============================
 // ===========================================
 
-window.onload = function()
-{
-    jeu.demoStart();
-}
+
 
 class classBoutons
 {

@@ -55,7 +55,10 @@ class classJeu
 
     newGame()
     {
-        
+        this.demoMode = false;
+        clearInterval(jeu.arene.batte.run);
+        jeu.arene.batte.startListenMouse();
+        console.log("newGame");
     }
 
     countDown()
@@ -65,9 +68,31 @@ class classJeu
 
     demoStart()
     {
-        console.log("demoStart");
-        setInterval(function(){ alert("Hello"); }, 3000);
-        //if ( && )
+            console.log("demoStart");
+            
+           jeu.arene.batte.x1 = jeu.arene.balles[0].x - 40;
 
+           if (jeu.arene.batte.x1 < 0)
+           {
+               jeu.arene.batte.x1 = 0
+           }
+           if (jeu.arene.batte.x1 >440)
+           {
+               jeu.arene.batte.x1 = 440
+           }
+           jeu.arene.batte.x2 = jeu.arene.batte.x1 + jeu.arene.batte.w;
+        document.getElementById("batte").style.left = jeu.arene.batte.x1 + "px";
+
+        console.log("x1 " + jeu.arene.batte.x1);
+        //document.getElementById("batte").style.left = this.x1 + "px";
+        
+        
+        //setInterval(function(){ alert("Hello"); }, 3000);
+        /*if ( jeu.arene.open.btnStart.disable() = true && 
+         setTimeout(function();{ } 9000))
+        {
+            console.log("demostart2")
+
+        }*/
     }
 }
