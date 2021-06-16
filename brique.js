@@ -15,15 +15,11 @@ class classBrique
         this.c = c;
         this.id = id;
 
-        this.createElement();
-    }
-
-    updatexy2()
-    {
+        
         this.x2 = this.x + this.w;
         this.y2 = this.y + this.h;
+        this.createElement();
     }
-
     createElement()
     {
         let brique = document.createElement("div");

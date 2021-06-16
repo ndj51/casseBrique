@@ -44,18 +44,24 @@ class classBalle
     move()
     {
         console.log("move"+this.id);
-        if(this.x < 7 || this.x > 513)
+        let dx = this.x + this.xs;
+        let dy = this.y + this.ys;
+
+        if( dx < 7 || dx > 513)
         {
             this.xs = this.xs * -1;
         }
-        this.x = this.x + this.xs;
 
-        if(this.y < 7 || this.y > 513)
+
+        if( dy < 7 /*|| dy > 513*/)
         {
             this.ys = this.ys * -1;
         }
-        this.y = this.y + this.ys;
-
+        if (dy > 513)
+        {
+            console.log("GameOver");
+        }
+ 
         
 
         
@@ -65,9 +71,15 @@ class classBalle
         {
             this.ys = this.ys * -1;
         }
-               
+        
+        this.x = this.x + this.xs;    
+        this.y = this.y + this.ys;
 
         this.moveTo (this.x, this.y);
+
+        //=== Collision Brique ============================
+
+
     }
 
     moveTo(x,y)
